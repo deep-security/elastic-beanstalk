@@ -1,9 +1,11 @@
 commands:
   00download:
     command: 'wget https://REPLACE-WITH-YOUR-DSM-IP:4119/software/agent/amzn1/x86_64/ -O /tmp/agent.rpm --quiet --no-check-certificate`'
-  01install:
+  01cleanup:
+    command 'rpm -q --quiet ds_agent | xargs --no-run-if-empty rpm -ev'
+  02install:
     command: 'rpm --replacepkgs -ihv /tmp/agent.rpm'
-  02sleep:
+  03sleep:
     command: 'sleep 70'
-  03activate:
+  04activate:
     command: '/opt/ds_agent/dsa_control -a dsm://REPLACE-WITH-YOUR-DSM-IP:4120/ "policyid:REPLACE-WITH-YOUR-POLICY-ID" --max-dsm-retries 0 >/tmp/dsa_control.log 2>&1'
