@@ -1,6 +1,6 @@
 commands:
   00download:
-    command: 'wget https://REPLACE-WITH-YOUR-DSM-IP:4119/software/agent/amzn1/x86_64/ -O /tmp/agent.rpm --quiet --no-check-certificate`'
+    command: 'wget https://REPLACE-WITH-YOUR-DSM-IP:4119/software/agent/amzn1/x86_64/ -O /tmp/agent.rpm --quiet --no-check-certificate'
   01preserveiptables:
     command: 'touch /etc/use_dsa_with_iptables'    
   02install:
@@ -8,4 +8,4 @@ commands:
   03sleep:
     command: 'sleep 70'
   04activate:
-    command: '/opt/ds_agent/dsa_control -a dsm://REPLACE-WITH-YOUR-DSM-IP:4120/ "policyid:REPLACE-WITH-YOUR-POLICY-ID" --max-dsm-retries 0 >/tmp/dsa_control.log 2>&1'
+    command: '/opt/ds_agent/dsa_control -a dsm://REPLACE-WITH-YOUR-DSM-IP:4120/ policyid:REPLACE-WITH-YOUR-POLICY-ID --max-dsm-retries 0 >/tmp/dsa_control.log 2>&1'
