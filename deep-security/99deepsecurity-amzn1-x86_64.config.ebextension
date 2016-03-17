@@ -1,6 +1,6 @@
 commands:
   00download:
-    command: 'wget https://REPLACE-WITH-YOUR-DSM-IP:4119/software/agent/amzn1/x86_64/ -O /tmp/agent.rpm --quiet --no-check-certificate`'
+    command: 'wget https://REPLACE-WITH-YOUR-DSM-IP:4119/software/agent/amzn1/x86_64/ -O /tmp/agent.rpm --quiet --no-check-certificate'
   01preserveiptables:
     command: 'touch /etc/use_dsa_with_iptables'    
   02install:
