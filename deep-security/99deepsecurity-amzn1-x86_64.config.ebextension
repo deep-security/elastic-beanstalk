@@ -4,7 +4,7 @@ commands:
   01preserveiptables:
     command: 'touch /etc/use_dsa_with_iptables'    
   02install:
-    command: 'rpm --replacepkgs -ihv /tmp/agent.rpm'
+    command: 'rpm --replacepkgs --replacefiles -ihv /tmp/agent.rpm'
   03sleep:
     command: 'sleep 70'
   04activate:
